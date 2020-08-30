@@ -3,6 +3,8 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.json()); // Middleware to add data from the body to the request object
+
 // app.get('/', (req, res) => {
 //   res
 //     .status(200)
@@ -25,6 +27,11 @@ app.get('/api/v1/tours', (req, res) => {
       tours, // short form for tours: tours. This can be used in ES6 when the key and the value share the same identifier, in this case: tours
     },
   });
+});
+
+app.post('/api/v1/tours', (req, res) => {
+  console.log(req.body);
+  res.send('Done');
 });
 
 const port = 3000;
