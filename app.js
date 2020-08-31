@@ -89,6 +89,8 @@ app.patch('/api/v1/tours/:id', (req, res) => {
   });
 });
 
+app.delete();
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
