@@ -4,13 +4,25 @@ const app = express();
 
 app.use(express.json()); // Middleware to add data from the body to the request object
 
+app.use((req, res, next) => {
+  console.log("Hello from the middleware!! 👋 ");
+  next();
+});
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
+
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`),
 );
 
 const getAllTours = (req, res) => {
+  console.log(req.requestTime);
   res.status(200).json({
     status: "success",
+    requestedAt: req.requestTime,
     results: tours.length,
     data: {
       tours, // short form for tours: tours. This can be used in ES6 when the key and the value share the same identifier, in this case: tours
@@ -104,5 +116,6 @@ app
 
 const port = 3000;
 app.listen(port, () => {
+  console.log(`${new Date().toISOString()}`);
   console.log(`App running on port ${port}...`);
 });
