@@ -18,4 +18,4 @@ const logTimestamp = () => {
   console.log(`${localDate} - ${localTime}`);
 };
 
-logTimestamp();
+module.exports = logTimestamp;
