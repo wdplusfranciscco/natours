@@ -14,3 +14,5 @@
 2020.09.02 - 14:42:23 (feature/param-middleware)
 
 2020.09.06 - 20:03:32 (feature/chaining-middleware)
+
+2020.09.10 - 22:19:39 (feature/serving-static-files)
