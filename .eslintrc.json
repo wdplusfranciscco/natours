@@ -17,7 +17,7 @@
     "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }],
     // added by me to prevent a trailing comma from being added in single object's elements
     "comma-dangle": [
-      1,
+      "error",
       {
         "objects": "never",
         "arrays": "never",
