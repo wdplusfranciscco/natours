@@ -6,7 +6,11 @@ const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
-app.use(morgan('dev'));
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json()); // Middleware to add data from the body to the request object
 app.use(express.static(`${__dirname}/public`));
 
