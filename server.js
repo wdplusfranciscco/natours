@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
-dotenv.config({ path: './config.env' });
-
 const app = require('./app');
+
+dotenv.config({ path: './config.env' });
 const logTimestamp = require('./dev-utilities/log-timestamp');
 
 // console.log(process.env);
