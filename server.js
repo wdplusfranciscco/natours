@@ -1,15 +1,32 @@
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = require('./app');
+const logTimeStamp = require('./dev-utilities/log-time-stamp');
 
 dotenv.config({ path: './config.env' });
-const logTimestamp = require('./dev-utilities/log-timestamp');
+
+const DB = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+);
+
+mongoose
+  // CONNECT TO LOCAL DATABASE WITH THIS:
+  //     .connect(process.env.DATABASE_LOCAL, {
+  // CONNECT TO REMOTE ATLAS DATABASE WITH THIS:
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then(() => logTimeStamp('server.js', 'DB Connection Successful!'));
 
 // console.log(process.env);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  logTimestamp();
-  console.log(`App running on port ${port}...`);
+  logTimeStamp('server.js', `App running on port ${port}...`);
 });
 
 // console.log(app.get('env'));
