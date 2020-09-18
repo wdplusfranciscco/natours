@@ -24,3 +24,5 @@
 2020.09.15 - 19:59:43 (feature/feature/connect-app-db-to-atlas)
 
 2020.09.16 - 22:27:36 (feature/add-mongoose-version-5)
+
+2020.09.17 - 20:43:43 (feature/mongoose-tour-model)
