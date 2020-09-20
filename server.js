@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = require('./app');
 const logTimeStamp = require('./dev-utilities/log-time-stamp');
+const logDebugStamp = require('./dev-utilities/log-debug-stamp.js');
 
 dotenv.config({ path: './config.env' });
 
@@ -39,6 +40,21 @@ const tourSchema = new mongoose.Schema({
 });
 
 const Tour = mongoose.model('Tour', tourSchema);
+
+const testTour = new Tour({
+  name: 'The Park Camper',
+  price: 997,
+});
+
+testTour
+  .save()
+  .then((doc) => {
+    logDebugStamp('20.09.17 [ server.js ] 21:15a', doc);
+  })
+  .catch((err) => {
+    console.log(err);
+    logTimeStamp('server.js', 'ERROR 💥 :', err);
+  });
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
