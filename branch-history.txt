@@ -36,3 +36,5 @@
 2020.09.21 - 18:20:46 (feature/create-documents-in-mongodb)
 
 2020.09.21 - 20:48:05 (feature/read-documents-in-mongodb)
+
+2020.09.22 - 14:42:16 (feature/update-documents-in-mongodb)
