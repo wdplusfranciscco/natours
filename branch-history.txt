@@ -44,3 +44,5 @@
 2020.09.22 - 20:00:41 (feature/basic-tours-model)
 
 2020.09.30 - 20:37:48 (feature/api-data-filtering)
+
+2020.10.07 - 19:25:11 (feature/advanced-filtering)
