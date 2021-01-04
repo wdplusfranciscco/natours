@@ -61,3 +61,5 @@
 2021.01.03 - 21:19:20 (feature/l101-matching-and-grouping)
 
 2021.01.04 - 08:27:31 (feature/l102-unwinding-and-projecting)
+
+2021.01.04 - 15:24:12 (feature/l103-virtual-properties)
